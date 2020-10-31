@@ -1,3 +1,7 @@
+import modelDefiners from './models';
 import { configSequelize } from './config';
 
-configSequelize();
+const sequelize = configSequelize();
+
+modelDefiners.map(modelDefiner => modelDefiner(sequelize))
+  .forEach(model => model.sync());

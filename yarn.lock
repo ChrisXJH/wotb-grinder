@@ -1549,6 +1549,11 @@ dot-prop@^5.2.0:
   dependencies:
     is-obj "^2.0.0"
 
+dotenv@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
+
 dotgitconfig@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/dotgitconfig/-/dotgitconfig-1.1.1.tgz#0e854a409f005c48bf820825e94f05215db41ed0"
