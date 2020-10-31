@@ -1,8 +1,16 @@
 import { DataTypes } from 'sequelize';
+import { sequelize } from '../config';
 
-export default (sequelize) => sequelize.define('Player', {
+const Player = sequelize.define('Player', {
   accountId: { type: DataTypes.STRING, allowNull: false },
-  clanId: { type: DataTypes.STRING },
-  clientLanguage: { type: DataTypes.STRING },
   nickname: { type: DataTypes.STRING }
+}, {
+  indexes: [
+    {
+      fields: ['accountId'],
+      using: 'BTREE'
+    }
+  ]
 });
+
+export default Player;
