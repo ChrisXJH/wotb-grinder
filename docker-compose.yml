@@ -6,6 +6,7 @@ services:
       - "8080:8080"
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
     depends_on:
       - db
     command: ["./scripts/wait-for-it.sh", "db:5432", "--", "yarn", "start-dev"]

@@ -5,8 +5,6 @@ import HttpClient from './clients/httpClient';
 import WotbApiClient from './clients/wotbApiClient';
 import Player from './models/player';
 
-sequelize.sync();
-
 const httpClient = new HttpClient();
 const wotbApiClient = new WotbApiClient({
   baseUrl: WOTB_API_URL,
@@ -55,4 +53,8 @@ const fetchPlayerData = async (nicknames) => {
 };
 
 const nicknames = ['watea_23', 'Fadoo', 'Lady_Maria', 'Vincentshao', 'DA_JIBA', 'Sponge2000', 'dgzhek_9'];
-fetchPlayerData(nicknames);
+
+sequelize.sync().then(() => {
+  fetchPlayerData(nicknames);
+});
+
