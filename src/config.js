@@ -21,7 +21,6 @@ const configSequelize = () => {
   const sequelize = new Sequelize(DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWORD, {
     host: DATABASE_HOST,
     dialect: 'mysql',
-    logging: logger.info.bind(logger)
   });
 
   return sequelize;
