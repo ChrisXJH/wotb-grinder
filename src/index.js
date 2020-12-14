@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 import { chunk, flatten } from 'lodash';
 import {
   APPLICATION_ID, logger, sequelize, WOTB_API_URL
@@ -6,6 +7,7 @@ import HttpClient from './clients/httpClient';
 import WotbApiClient from './clients/wotbApiClient';
 import Player from './models/player';
 import allNicknames from './nicknames.json';
+import { fetchPlayerData } from './jobs/fetchPlayerData';
 
 const httpClient = new HttpClient({ maxRPS: 2 });
 const wotbApiClient = new WotbApiClient({
@@ -54,5 +56,6 @@ const fetchPlayersDataByNicknames = async (nicknames) => {
 };
 
 sequelize.sync().then(() => {
-  fetchPlayersDataByNicknames(allNicknames);
+  fetchPlayerData();
+  // fetchPlayersDataByNicknames(allNicknames);
 });

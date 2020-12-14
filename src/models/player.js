@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../config';
+import PlayerStatisticsAll from './playerStatisticsAll';
 
 const Player = sequelize.define('Player', {
   accountId: { type: DataTypes.STRING, allowNull: false },
@@ -12,5 +13,8 @@ const Player = sequelize.define('Player', {
     }
   ]
 });
+
+Player.hasMany(PlayerStatisticsAll);
+PlayerStatisticsAll.belongsTo(Player);
 
 export default Player;
